@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HCN</title>
+</head>
+<body>
+<canvas id="hinhchunhat" height="800" width="800" style="border:1px solid #d3d3d3"></canvas>
+<script>
+    let HCN = function (width,height) {
+        this.width = width;
+        this.height = height;
+
+        this.getwidth = function () {
+            return this.width;
+        };
+        this.getheight = function () {
+            return this.height;
+        };
+        this.getArea = function () {
+            return this.width * this.height;
+        };
+        this.getPerimeter = function () {
+            return (this.width + this.height) * 2;
+        };
+        this.setWidth = function (newWight) {
+            this.width = newWight;
+        };
+        this.setHeight = function (newHight) {
+            this.height = newHight;
+        };
+
+    };
+    let hinhchunhat = new HCN(500,210);
+
+    function tao_hinh_chu_nhat() {
+            let ctx = document.getElementById("hinhchunhat").getContext("2d");
+
+            ctx.rect(300, 200, hinhchunhat.width, hinhchunhat.height);
+            ctx.fillStyle="red";
+            ctx.fill();
+    };
+        hinhchunhat.setWidth(50);
+        hinhchunhat.setHeight(10);
+        alert("dien_tich_la" + hinhchunhat.getArea());
+        alert("chu_vi_la" + hinhchunhat.getPerimeter());
+
+    tao_hinh_chu_nhat();
+</script>
+</body>
+</html>
